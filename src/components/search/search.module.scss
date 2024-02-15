@@ -1,0 +1,74 @@
+div.searchSectionContainer {
+  display: flex;
+
+  &.preSearch {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  div.logoContainerWide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  div.inputBoxContainer {
+    padding: 0px 30px;
+
+    div.inputGroup {
+      display: flex;
+      > div {
+        width: 50px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 20px;
+          object-fit: contain;
+        }
+      }
+      input {
+        width: calc(100% - 50px);
+        border-left: none;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        padding: 10px 0px;
+        padding-right: 10px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  div.btnContainer {
+    display: flex;
+    justify-content: center;
+
+    button {
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+
+      &:disabled {
+        cursor: default;
+      }
+    }
+  }
+}

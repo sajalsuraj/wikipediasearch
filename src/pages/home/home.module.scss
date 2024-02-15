@@ -1,0 +1,67 @@
+div.container {
+  > h1 {
+    text-align: center;
+  }
+
+  div.searchTabs {
+    display: flex;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+
+    > div {
+      flex-basis: 50%;
+
+      > div {
+        padding: 10px;
+        text-align: center;
+
+        &.activeTab {
+          color: blue;
+          font-weight: 600;
+        }
+
+        &.inActiveTab {
+          color: #ddd;
+          cursor: pointer;
+        }
+      }
+
+      &:first-of-type {
+        border-right: 1px solid #ccc;
+      }
+    }
+  }
+
+  div.dataListSection {
+    border-top: 1px solid #ccc;
+
+    div.emptyDataPlaceholder {
+      padding: 30px;
+      text-align: center;
+    }
+  }
+
+  div.searchHistorySection {
+    border-top: 1px solid #ccc;
+    height: calc(100vh - 396px);
+    overflow-y: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    > div.historyItem {
+      img {
+        width: 18px;
+      }
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    div.emptyDataPlaceholder {
+      text-align: center;
+    }
+  }
+}
