@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+# Wikipedia Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies used
+**UI Library** - React, Typescript, React Window (Virtualized List)
 
-## Available Scripts
+**Backend** - NodeJs, Express
 
-In the project directory, you can run:
+**HTTP Library** - Axios
 
-### `npm start`
+## Folder Structure
+- root
+    - src
+        - components
+            - datalist
+            - loader
+            - search
+        - pages
+            - home
+        - types
+            - listitem.types.ts
+        - utils
+            - constants.util.ts
+            - helpers.util.ts
+        - App.tsx
+        - index.tsx
+        - layout.tsx
+    - server.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Important files and their usage - 
+**src/layout.tsx** - The outlet container component where the pages will be rendered.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**src/App.tsx** - The main component.
 
-### `npm test`
+**pages/home/Home.tsx** - The home page of the app that will render the search, search results, and search history components.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**src/components/search/Search.tsx** - The search component that contains a search bar and a search button that will trigger the search.
 
-### `npm run build`
+**src/components/loader/Loader.tsx** - The loader component acts as a placeholder until the real data appears.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**src/components/datalist/Datalist.tsx** - The Datalist component is responsible for listing of the search results and search history list.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**src/components/Listitem.tsx** - The Listitem component is responsible to render a single search list item.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**src/utils/helpers.util.ts** - This file contains the helper functions.
 
-### `npm run eject`
+**src/utils/constants.util.ts** - This file contains the constant variables.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**server.js** - This is a server file that runs the entire application and APIs.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Functionalities -
+**Search functionality**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- User can provide the search string in the input box and on the search button click an API will be called that eventually fetches the result from the Wikipedia API.
+- The result will be set in a react state and then gets rendered through the Datalist component.
+- Handled states like loading, empty data, etc.
+- Local API to fetch the data from Wikipedia - **/api/:searchValue**
+- Wikipedia API used - https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&format=json&srlimit=50&srsearch={searchValue}
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Optimization techniques
+- Used Virtualized list to show a certain number of list items
 
-## Learn More
+## Technologies required
+- Node 18+
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Steps to run the app locally
+- Run "git clone git@github.com:sajalsuraj/wikipediasearch.git"
+- npm install
+- npm run app
+- Open browser, run the app on "http://localhost:3001"
 
-To learn React, check out the [React documentation](https://reactjs.org/).

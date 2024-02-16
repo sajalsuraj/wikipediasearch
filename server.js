@@ -13,7 +13,6 @@ app.use(express.static(__dirname));
 app.get("/api/:searchValue", async (req, res) => {
   try {
     const response = await axios.get(`${API_URL}${req.params.searchValue}`);
-    console.log(`${API_URL}${req.params.searchValue}`);
     res.json(response.data);
   } catch (err) {
     res.send(err);
