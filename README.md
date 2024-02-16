@@ -56,6 +56,10 @@
 - Local API to fetch the data from Wikipedia - **/api/:searchValue**
 - Wikipedia API used - https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&format=json&srlimit=50&srsearch={searchValue}
 
+**Search History**
+
+- Shows the list of the search strings.
+
 ## Optimization techniques
 - Used Virtualized list to show a certain number of list items
 
